@@ -17,7 +17,7 @@ high_model = train_the_model("high_train_loss",train_X,train_y,test_X,test_y,sca
 train_X,train_y,test_X,test_y = reframe_values(reframed_low)
 low_model = train_the_model("low_train_loss",train_X,train_y,test_X,test_y,scaled_macd)
 
-open_model.save("./ML StockMarket Production/open_model")
-close_model.save("./ML StockMarket Production/close_model")
-high_model.save("./ML StockMarket Production/high_model")
-low_model.save("./ML StockMarket Production/low_model")
+open_model.save("./open_model")
+close_model.save("./close_model")
+high_model.save("./high_model")
+low_model.save("./low_model")

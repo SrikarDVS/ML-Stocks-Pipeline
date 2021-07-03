@@ -4,7 +4,7 @@ from util import get_macd
 import pandas as pd
 
 
-dataset = pd.read_csv('./ML StockMarket Production/file1.csv',index_col=0, date_parser=parse)
+dataset = pd.read_csv('./file1.csv',index_col=0, date_parser=parse)
 values = dataset.values
 
 values = values.astype('int')

@@ -6,11 +6,12 @@ import keras.models as load
 from reframe import reframed_close,reframed_high,reframed_low,reframed_open
 from util import reframe_values
 from get_value import scaled_macd,scaler
+import os
 
-open_model = load.load_model("./ML StockMarket Production/open_model")
-close_model = load.load_model("./ML StockMarket Production/close_model")
-high_model = load.load_model("./ML StockMarket Production/high_model")
-low_model = load.load_model("./ML StockMarket Production/low_model")
+open_model = load.load_model("./open_model")
+close_model = load.load_model("./close_model")
+high_model = load.load_model("./high_model")
+low_model = load.load_model("./low_model")
 train_X,train_y,test_X,test_y = reframe_values(reframed_open)
 
 combined_prediction = validation_test(open_model,close_model,high_model,low_model,test_X,scaled_macd)
@@ -26,10 +27,10 @@ for i in range(len(names)):
     rmse = sqrt(mean_squared_error(combined_prediction[:,plot_no],real[:,plot_no]))
     plt.plot(combined_prediction[:,plot_no], label=names[i]+" prediction")
     plt.plot(real[:,plot_no], label=names[i]+" real")
-    
+    base_dir = "./Test Prediction Graphs/"
     plt.legend()
     plt.text(1,0,rmse,transform=ax.transAxes)
-    plt.savefig(names[i]+" Test predictions")
+    plt.savefig(os.path.join(base_dir,names[i]))
 
     
     print(rmse)

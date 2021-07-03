@@ -26,6 +26,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from keras.utils.vis_utils import plot_model
 import pandas_datareader as web
+import os
 
 
 def parse(x):
@@ -142,7 +143,9 @@ def train_the_model(name,train_X,train_y,test_X,test_y,tech_ind):
     pyplot.plot(history.history['loss'], label='train')
     pyplot.plot(history.history['val_loss'], label='test')
     pyplot.legend()
-    pyplot.savefig(name)
+    base_dir = './Loss Graphs/'
+
+    pyplot.savefig(os.path.join(base_dir,name))
 
     return new_model
 
