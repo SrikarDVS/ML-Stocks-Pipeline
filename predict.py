@@ -15,6 +15,6 @@ x = scaler.inverse_transform(x)
 
 
 pyplot.plot(x, label = '100 day prediction')
-base_dir = './Prediction/'
+#base_dir = './Prediction/'
 name = "N_day_prediction"
-pyplot.savefig(os.path.join(base_dir,name))
+pyplot.savefig(name)

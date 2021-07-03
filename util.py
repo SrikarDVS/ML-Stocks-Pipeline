@@ -143,9 +143,8 @@ def train_the_model(name,train_X,train_y,test_X,test_y,tech_ind):
     pyplot.plot(history.history['loss'], label='train')
     pyplot.plot(history.history['val_loss'], label='test')
     pyplot.legend()
-    base_dir = './Loss Graphs/'
 
-    pyplot.savefig(os.path.join(base_dir,name))
+    pyplot.savefig(name+" Loss Graph")
 
     return new_model
 
