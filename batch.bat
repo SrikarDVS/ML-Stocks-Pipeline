@@ -1,8 +1,8 @@
-@echo off
+#!/bin/bash
 
-python "get_data.py"
-python "get_value.py"
-python "train_model.py"
-python "test_model.py"
-python "predict.py"
+python3 "get_data.py"
+python3 "get_value.py"
+python3 "train_model.py"
+python3 "test_model.py"
+python3 "predict.py"
 pause

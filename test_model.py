@@ -27,10 +27,10 @@ for i in range(len(names)):
     rmse = sqrt(mean_squared_error(combined_prediction[:,plot_no],real[:,plot_no]))
     plt.plot(combined_prediction[:,plot_no], label=names[i]+" prediction")
     plt.plot(real[:,plot_no], label=names[i]+" real")
-    base_dir = "./Test Prediction Graphs/"
+#    base_dir = "./Test Prediction Graphs/"
     plt.legend()
     plt.text(1,0,rmse,transform=ax.transAxes)
-    plt.savefig(os.path.join(base_dir,names[i]))
+    plt.savefig(names[i]+" Test Predictions")
 
     
     print(rmse)
